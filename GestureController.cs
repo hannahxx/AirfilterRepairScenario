@@ -5,7 +5,7 @@ using Leap;
 
 public class GestureController : MonoBehaviour
 {
-    Controller controller;
+    	Controller controller;
 	BonnetUp bonnet;
 	filterchange2 permission;
 	BonnetUp2 bonnetUp;
@@ -16,7 +16,7 @@ public class GestureController : MonoBehaviour
         controller.EnableGesture(Gesture.GestureType.TYPECIRCLE);
         controller.EnableGesture(Gesture.GestureType.TYPESWIPE);
 
-		bonnet = GameObject.Find("bonnetet").GetComponent<BonnetUp>();
+		bonnet = GameObject.Find("bonnet").GetComponent<BonnetUp>();
 
 		permission = GameObject.Find("airfiltertop").GetComponent<filterchange2>();
 		bonnetUp = GameObject.Find("GameObject").GetComponent<BonnetUp2>();
