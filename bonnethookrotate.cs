@@ -18,7 +18,7 @@ public class bonnethookrotate : MonoBehaviour {
          c = transform.rotation;
         
          if (handconnect)
-         { // GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition| RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationX;
+         { 
             if (cnt == 0)
             {
               
@@ -32,17 +32,16 @@ public class bonnethookrotate : MonoBehaviour {
            
                 this.transform.Rotate(0, 0, -70.0f);
                 GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-             BonnetUp bu = GameObject.Find("Bonnet").GetComponent<BonnetUp>();
-             this.GetComponent<Rigidbody>().isKinematic = false;
-             bu.Bonnetup();
-             GameObject boxcoll = GameObject.Find("HandController");
-             BoxCollider bc = boxcoll.GetComponent<BoxCollider>();
-             Destroy(bc);
-                
-                
+                BonnetUp bu = GameObject.Find("Bonnet").GetComponent<BonnetUp>();
+                this.GetComponent<Rigidbody>().isKinematic = false;
+                bu.Bonnetup();
+                GameObject boxcoll = GameObject.Find("HandController");
+                BoxCollider bc = boxcoll.GetComponent<BoxCollider>();
+                Destroy(bc); 
             }
-        }
-	}  
+         }
+    }
+	
     void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "hand")
